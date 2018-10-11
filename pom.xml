@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.flygo520</groupId>
+	<artifactId>FlyGo_Maven_Ali</artifactId>
+	<version>0.0.1</version>
+	<name>FlyGo_Maven_Ali</name>
+	<description>FlyGo_Maven_Ali</description>
+	
+	<distributionManagement>
+		<repository>
+			<!-- 对应Maven setting.xml配置文件中 server 一一对应 -->
+			<id>rdc-releases</id>
+			<name>RDC Release Repository</name>
+			<url>https://${你的阿里云私服地址}/</url>
+		</repository>
+		<snapshotRepository>
+			<!-- 对应Maven setting.xml配置文件中 server 一一对应 -->
+			<id>rdc-snapshots</id>
+			<name>RDC snapshot Repository</name>
+			<url>https://${你的阿里云私服地址}/</url>
+		</snapshotRepository>
+	</distributionManagement>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.1.2</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	
+</project>
